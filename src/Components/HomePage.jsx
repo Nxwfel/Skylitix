@@ -10,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const HomePage = () => {
     useEffect(() => {
-        gsap.to("#Earth-model", {
+        gsap.to(".Earth", {
           scrollTrigger: {
-            trigger: "#Earth-model",
+            trigger: ".Earth",
             start: "+=300 top",
             end: "+=100",
             scrub: 1,
@@ -20,7 +20,7 @@ const HomePage = () => {
             markers: true,
           },
           scale: 0.5,
-          y: 190,
+          y: 50,
           x: 350,
           rotation: 100,
           delay: 1,
@@ -29,11 +29,10 @@ const HomePage = () => {
   return (
     <div className='h-fit w-screen flex flex-col justify-center items-center bg-black overflow-hidden '>
      <Header />
-     <img id='Earth-model' src={Earth} alt="Earth"  className='h-[170vh] w-screen mt-80 z-0'/>
-     <img src={Earth} alt="Earth"  className='hidden absolute top-90 h-[70vh] w-full z-0'/>
+     <img src={Earth} alt="Earth"  className='min-md:Earth h-[190vh] max-md:h-[85vh] max-sm:h-[70vh] w-screen mt-80 z-0'/>
      <div className='absolute h-70 w-100 top-60 z-10 text-center items-center flex flex-col'>
-        <p className='font-Alumi text-xl text-white font-light'>Start-up that helps the farmers</p>
-        <h1 className='font-Alumi text-7xl text-white font-bold tracking-widest'>Skylitix: <br /> <span className='font-normal tracking-wide text-nowrap'>Satellites In Agronomia</span> </h1>
+        <p className='font-Alumi  text-xl text-white font-light'>Start-up that helps the farmers</p>
+        <h1 className='font-Alumi text-7xl text-white font-bold tracking-widest'>Skylitix: <br /> <span className='font-normal tracking-wide text-nowrap max-md:text-5xl'>Satellites In Agronomia</span> </h1>
         <button className="cta ml-3 mt-7">
             <span className="hover-underline-animation text-white font-Alumi font-bold"> Explore </span>
             <svg
@@ -58,28 +57,32 @@ const HomePage = () => {
      initial={{ opacity:0 ,x:-100 }}
      whileInView={{ opacity:1, x:0}}
      transition={{ duration: 2 }}
-     className='absolute h-fit w-[60vw] top-[150vh] left-4 z-10 text-start flex flex-col'>
+     className='absolute max-md:relative h-screen w-[60vw] top-[140vh] max-md:top-30 max-sm:top-50 max-md:text-center max-md:items-center max-md:text-nowrap max-md:w-screen left-4 max-md:left-0 z-10 text-start flex flex-col'>
       <h1 className='text-9xl text-white font-Alumi font-bold'>Skylitix</h1>
-      <p className='text-xl text-wrap max-w-[40vw] text-white font-Alumi font-light'>
+      <p className='text-xl text-wrap max-w-[40vw] max-md:max-w-full  text-white font-Alumi font-light'>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam rem minus ex eius, nemo voluptate sit quibusdam illum excepturi cumque neque, praesentium reprehenderit eos quam sint adipisci ratione consectetur. Tempora.
       </p>
      </motion.div>
-     <div className='h-screen w-screen -mt-50 mb-5 text-center items-center justify-center flex flex-col'>
+     <div className='h-screen w-screen -mt-40 max-md:-mt-20 max-sm:mt-20 mb-5 text-center items-center justify-center flex flex-col'>
+     
       <motion.h1 
       initial={{opacity:-10, y:100}}
       whileInView={{opacity:1, y:0}}
       transition={{duration:2}}
       className='text-9xl text-white font-Alumi font-bold tracking-wider'>Services</motion.h1>
+     
       <motion.p 
       initial={{opacity:-10 , y:-100}}
       whileInView={{opacity:1 , y:0}}
       transition={{duration:3}}
       className='text-xl text-wrap max-w-[60vw] text-white font-Alumi font-light'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus enim quas a, corporis dignissimos ratione, alias perspiciatis qui similique laborum est voluptatem. Dignissimos tenetur expedita optio a. Molestiae, neque corporis qui praesentium nemo esse saepe earum deserunt beatae modi dignissimos a enim culpa illum, mollitia harum itaque eveniet sint at?</motion.p>
-      <motion.div className='w-screen h-fit gap-30 mt-20 items-center justify-center flex'>
+      
+      <motion.div className='w-screen h-fit gap-30 max-md:gap-10 mt-20 items-center justify-center flex'>
         <div className='h-100 w-50 bg-yellow-400 rounded-3xl grayscale hover:grayscale-0 hover:transition-all'></div>
         <div className='h-100 w-50 bg-yellow-400 rounded-3xl grayscale hover:grayscale-0'></div>
         <div className='h-100 w-50 bg-yellow-400 rounded-3xl grayscale hover:grayscale-0'></div>
       </motion.div>
+
     </div>
     </div>
   )
