@@ -19,7 +19,6 @@ const HomePage = () => {
             end: "+=100",
             scrub: 1,
             pin: true,
-            markers: true,
           },
           scale: 0.5,
           y: 70,
